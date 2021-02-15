@@ -23,14 +23,12 @@ static td_state_t td_state;
 
 // Function to determine the current tapdance state
 uint8_t cur_dance(qk_tap_dance_state_t *state);
-
 // Determine the tapdance state to return
 uint8_t cur_dance(qk_tap_dance_state_t *state) {
     if (state->count == 1) {
         if (state->interrupted || !state->pressed) return SINGLE_TAP;
         else return SINGLE_HOLD;
     }
-
     if (state->count == 2){
         return DOUBLE_TAP;
     }
@@ -47,7 +45,7 @@ uint8_t cur_dance(qk_tap_dance_state_t *state) {
 
 qk_tap_dance_action_t tap_dance_actions[] = {
     [TAB_ALT_OR_ALTSHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tab_alt_altshift_finished, tab_alt_altshift_reset),
-    [ENTER_CMD_OR_CMDSHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(enter_cmd_cmdshift_tap, NULL, enter_cmd_cmdshift_reset),
+    [ENTER_CMD_OR_CMDSHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, enter_cmd_cmdshift_tap, enter_cmd_cmdshift_reset),
     [TAPDANCE_LPRN] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tapdance_lprn_tap, tapdance_lprn_reset),
     [TAPDANCE_RPRN] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tapdance_rprn_tap, tapdance_rprn_reset)
 };

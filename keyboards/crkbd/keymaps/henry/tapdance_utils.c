@@ -1,4 +1,4 @@
-#define TAPPING_TERM 100
+#define TAPPING_TERM 50
 //
 // Tap Dance keycodes
 enum td_keycodes {

@@ -70,13 +70,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             break;
 
-        case PRINT_SCREEN:
+        case PRINT_SCREEN_COPY:
             if (record->event.pressed) {
                 SEND_STRING(SS_LCTL(SS_LCMD(SS_LSFT(SS_TAP(X_4)))));
             }
             break;
 
-        case PRINT_SCREEN_COPY:
+        case PRINT_SCREEN:
             if (record->event.pressed) {
                SEND_STRING(SS_LCMD(SS_LSFT(SS_TAP(X_4))));
             }
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
       ZOOM_MUTE_UNMUTE,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                  KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|            |--------+--------+--------+--------+--------+--------+--------|
-       TD(TAB_ALT_OR_ALTSHIFT),TD(ENTER_CMD_OR_CMDSHIFT), MT(MOD_LSFT, KC_BSPC),     MT(MOD_LSFT,KC_ENT), LT(2,KC_SPC), MT(MOD_LALT,KC_BSPC)\
+       TD(TAB_ALT_OR_ALTSHIFT),TD(ENTER_CMD_OR_CMDSHIFT), MT(MOD_LSFT, KC_ENT),     MT(MOD_LSFT,KC_ENT), LT(2,KC_SPC), MT(MOD_LALT,KC_BSPC)\
                                       //`--------------------------'            `--------------------------'
   ),
 
@@ -114,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                                                                                          |--------+--------+--------+--------+--------+--------|
       PRINT_SCREEN_COPY,   KC_PERC,   KC_CIRC,   PYCHARM_BACK_TO_CONSOLE,   KC_RBRC,   KC_TILD,                                                        KC_AMPR,  KC_NO,  KC_COMM,  KC_DOT,  KC_SLSH,  KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------+--------|                                                                           |--------+--------+--------+--------+--------+--------+--------|
-       TD(TAB_ALT_OR_ALTSHIFT),TD(ENTER_CMD_OR_CMDSHIFT), MT(MOD_LSFT, KC_BSPC),                                                                MT(MOD_LSFT,KC_ENT), LT(2,KC_SPC), MT(MOD_LALT,KC_BSPC)\
+       TD(TAB_ALT_OR_ALTSHIFT),TD(ENTER_CMD_OR_CMDSHIFT), MT(MOD_LSFT, KC_ENT),                                                                MT(MOD_LSFT,KC_ENT), LT(2,KC_SPC), MT(MOD_LALT,KC_BSPC)\
        //`--------------------------'                                                                                                          `--------------------------'
     ),
 
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                                                                       |--------+--------+--------+--------+--------+--------|
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MUTE, KC_VOLD,                                                                        KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO, KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------+--------|                                                            |--------+--------+--------+--------+--------+--------+--------|
-       TD(TAB_ALT_OR_ALTSHIFT),TD(ENTER_CMD_OR_CMDSHIFT), MT(MOD_LSFT, KC_BSPC),                                                 MT(MOD_LSFT,KC_ENT), LT(2,KC_SPC), MT(MOD_LALT,KC_BSPC)\
+       TD(TAB_ALT_OR_ALTSHIFT),TD(ENTER_CMD_OR_CMDSHIFT), MT(MOD_LSFT, KC_ENT),                                                 MT(MOD_LSFT,KC_ENT), LT(2,KC_SPC), MT(MOD_LALT,KC_BSPC)\
        //`--------------------------'                                                                                           `--------------------------'
   )
 };

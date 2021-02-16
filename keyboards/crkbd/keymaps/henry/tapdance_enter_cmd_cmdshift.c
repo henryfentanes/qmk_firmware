@@ -12,6 +12,8 @@ void enter_cmd_cmdshift_tap(qk_tap_dance_state_t *state, void *user_data) {
             register_mods(MOD_BIT(KC_RSFT)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
             break;
         case TRIPLE_TAP:
+            register_mods(MOD_BIT(KC_LGUI)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
+            register_mods(MOD_BIT(KC_LALT));
             break;
     }
 }
@@ -29,6 +31,8 @@ void enter_cmd_cmdshift_reset(qk_tap_dance_state_t *state, void *user_data) {
             unregister_mods(MOD_BIT(KC_RSFT)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
             break;
         case TRIPLE_TAP:
+            unregister_mods(MOD_BIT(KC_LGUI)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
+            unregister_mods(MOD_BIT(KC_LALT));
             break;
     }
 }

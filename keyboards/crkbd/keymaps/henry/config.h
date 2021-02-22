@@ -13,9 +13,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #pragma once
 
+#undef IGNORE_MOD_TAP_INTERRUPT
+#define PERMISSIVE_HOLD
 
 #ifdef OLED_DRIVER_ENABLE
   #define OLED_DISPLAY_128X64
@@ -48,7 +49,7 @@
 // give it more time to accelerate to max speed to retain precise control over short distances.
 #define MOUSEKEY_TIME_TO_MAX 40
 // The default is 300. Let's try and make this as low as possible while keeping the cursor responsive
-#define MOUSEKEY_DELAY 100
+#define MOUSEKEY_DELAY 10
 // It makes sense to use the same delay for the mouseweel
 #define MOUSEKEY_WHEEL_DELAY 100
 // The default is 100

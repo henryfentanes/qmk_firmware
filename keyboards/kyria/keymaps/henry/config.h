@@ -16,6 +16,8 @@
 
 #pragma once
 
+// permisse hold should be useful for fast typist, maybe I got used to how it
+// was before, but it's not working well for me
 #define PERMISSIVE_HOLD_PER_KEY
 
 #ifdef OLED_DRIVER_ENABLE

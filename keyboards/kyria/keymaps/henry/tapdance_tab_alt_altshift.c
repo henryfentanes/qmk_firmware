@@ -7,7 +7,7 @@ void tab_alt_altshift_finished(qk_tap_dance_state_t *state, void *user_data) {
     td_state = cur_dance(state);
     switch (td_state) {
         case SINGLE_TAP:
-            register_code(KC_TAB);
+            register_code(KC_ENT);
             break;
         case SINGLE_HOLD:
             register_mods(MOD_BIT(KC_LALT)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
@@ -24,7 +24,7 @@ void tab_alt_altshift_finished(qk_tap_dance_state_t *state, void *user_data) {
 void tab_alt_altshift_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (td_state) {
         case SINGLE_TAP:
-            unregister_code(KC_TAB);
+            unregister_code(KC_ENT);
             break;
         case SINGLE_HOLD:
             unregister_mods(MOD_BIT(KC_LALT)); // For a layer-tap key, use `layer_off(_MY_LAYER)` here

@@ -46,7 +46,7 @@
 // Allows to use either side as the master. Look at the documentation for info:
 // https://docs.qmk.fm/#/config_options?id=setting-handedness
 //#define EE_HANDS
-#define MASTER_RIGHT
+#define MASTER_LEFT
 
 // Set the mouse settings to a comfortable speed/accuracy trade-off
 // Assume the screen refresh rate is 60 Htz or higher

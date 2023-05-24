@@ -13,7 +13,9 @@ typedef enum {
     SINGLE_TAP,
     SINGLE_HOLD,
     DOUBLE_TAP,
-    TRIPLE_TAP
+    DOUBLE_HOLD,
+    TRIPLE_TAP,
+    TRIPLE_HOLD
 } td_state_t;
 
 // Create a global instance of the tapdance state type
@@ -30,11 +32,14 @@ uint8_t cur_dance(qk_tap_dance_state_t *state) {
         if (state->interrupted || !state->pressed) return SINGLE_TAP;
         else return SINGLE_HOLD;
     }
-
-    if (state->count == 2){
-        return DOUBLE_TAP;
+    if (state->count == 2) {
+        if (state->interrupted || !state->pressed) return DOUBLE_TAP;
+        else return DOUBLE_HOLD;
     }
-    if (state->count == 3) return TRIPLE_TAP;
+    if (state->count == 3) {
+        if (state->interrupted || !state->pressed) return TRIPLE_TAP;
+        else return TRIPLE_HOLD;
+    }
     else return 4; // Any number higher than the maximum state value you return above
 }
 
@@ -47,7 +52,7 @@ uint8_t cur_dance(qk_tap_dance_state_t *state) {
 
 qk_tap_dance_action_t tap_dance_actions[] = {
     [TAB_ALT_OR_ALTSHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tab_alt_altshift_finished, tab_alt_altshift_reset),
-    [ENTER_CMD_OR_CMDSHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(enter_cmd_cmdshift_tap, NULL, enter_cmd_cmdshift_reset),
+    [ENTER_CMD_OR_CMDSHIFT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, enter_cmd_cmdshift_tap, enter_cmd_cmdshift_reset),
     [TAPDANCE_LPRN] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tapdance_lprn_tap, tapdance_lprn_reset),
     [TAPDANCE_RPRN] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tapdance_rprn_tap, tapdance_rprn_reset)
 };

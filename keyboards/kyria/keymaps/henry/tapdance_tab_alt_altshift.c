@@ -12,11 +12,15 @@ void tab_alt_altshift_finished(qk_tap_dance_state_t *state, void *user_data) {
         case SINGLE_HOLD:
             register_mods(MOD_BIT(KC_LALT)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
             break;
-        case DOUBLE_TAP: // Allow nesting of 2 parens `((` within tapping term
+        case DOUBLE_TAP:
+            break;
+        case DOUBLE_HOLD: // Allow nesting of 2 parens `((` within tapping term
             register_mods(MOD_BIT(KC_LALT)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
             register_mods(MOD_BIT(KC_RSFT)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
             break;
         case TRIPLE_TAP:
+            break;
+        case TRIPLE_HOLD:
             break;
     }
 }
@@ -30,10 +34,14 @@ void tab_alt_altshift_reset(qk_tap_dance_state_t *state, void *user_data) {
             unregister_mods(MOD_BIT(KC_LALT)); // For a layer-tap key, use `layer_off(_MY_LAYER)` here
             break;
         case DOUBLE_TAP:
+            break;
+        case DOUBLE_HOLD:
             unregister_mods(MOD_BIT(KC_LALT)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
             unregister_mods(MOD_BIT(KC_RSFT)); // For a layer-tap key, use `layer_on(_MY_LAYER)` here
             break;
         case TRIPLE_TAP:
+            break;
+        case TRIPLE_HOLD:
             break;
     }
 }
